@@ -2,6 +2,10 @@ import React, { useState, useEffect, useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { ArrowRight, Building2, Paintbrush, BarChart3, Mail, Phone, ArrowUpRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import heroImg from '../assets/hero.png.png';
+import photo1 from '../assets/photo_1.jpg';
+import photo2 from '../assets/photo_2.jpg';
+import photo3 from '../assets/photo_3.jpg';
 
 const ExpertiseCard = ({ icon, title, desc, delay, fullWidth = false, link }: { icon: any, title: string, desc: string, delay: number, fullWidth?: boolean, link: string }) => {
   const cardRef = useRef<HTMLDivElement>(null);
@@ -86,7 +90,7 @@ export const Home = () => {
       <section className="hero-section">
         <motion.div style={{ opacity: heroOpacity, scale: heroScale }} className="hero-bg">
           <div className="hero-overlay" />
-          <img src="/src/assets/hero.png.png" alt="Architecture" />
+          <img src={heroImg} alt="Architecture" />
         </motion.div>
 
         <div className="container hero-content-wrapper">
@@ -148,7 +152,7 @@ export const Home = () => {
               className="vision-image-wrapper"
             >
               <div className="vision-image-border" />
-              <img src="/src/assets/photo_3.jpg" alt="La Vision" />
+              <img src={photo3} alt="La Vision" />
             </motion.div>
             <div className="vision-content">
               <span className="section-label">Vision</span>
@@ -177,19 +181,19 @@ export const Home = () => {
         <div className="container" style={{ padding: '0 2rem' }}>
           <div className="gallery-grid">
             <motion.div initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.1 }} viewport={{ once: true }} className="gallery-item">
-              <img src="/src/assets/photo_1.jpg" alt="Portfolio 1" />
+              <img src={photo1} alt="Portfolio 1" />
               <div className="gallery-overlay">
                 <span className="gallery-caption">Résidence 01</span>
               </div>
             </motion.div>
             <motion.div initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.2 }} viewport={{ once: true }} className="gallery-item gallery-item-stagger">
-              <img src="/src/assets/photo_2.jpg" alt="Portfolio 2" />
+              <img src={photo2} alt="Portfolio 2" />
               <div className="gallery-overlay">
                 <span className="gallery-caption">Résidence 02</span>
               </div>
             </motion.div>
             <motion.div initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.3 }} viewport={{ once: true }} className="gallery-item">
-              <img src="/src/assets/photo_3.jpg" alt="Portfolio 3" />
+              <img src={photo3} alt="Portfolio 3" />
               <div className="gallery-overlay">
                 <span className="gallery-caption">Édifices</span>
               </div>

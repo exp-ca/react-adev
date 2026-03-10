@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
+import photo1 from '../assets/photo_1.jpg';
 
 export const Development = () => {
   const { scrollYProgress } = useScroll();
@@ -33,7 +34,7 @@ export const Development = () => {
               className="vision-image-wrapper"
             >
               <div className="vision-image-border" />
-              <img src="/src/assets/photo_1.jpg" alt="Développement" style={{ height: '800px' }} />
+              <img src={photo1} alt="Développement" style={{ height: '800px' }} />
             </motion.div>
             <div className="vision-content">
               <h3 style={{ fontSize: '1.5rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '2rem' }}>Une méthodologie sans faille</h3>

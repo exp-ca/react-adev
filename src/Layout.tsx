@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Outlet, Link, useLocation } from 'react-router-dom';
 import { motion, useSpring, AnimatePresence } from 'framer-motion';
-import { Mail, MapPin, Phone, Menu, X, ChevronDown } from 'lucide-react';
+import { Mail, MapPin, Phone, Menu, X } from 'lucide-react';
 import logo from './assets/logo.png';
 
 const CustomCursor = () => {
@@ -64,7 +64,6 @@ const CustomCursor = () => {
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
-  const [isExpertiseOpen, setIsExpertiseOpen] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
@@ -95,14 +94,7 @@ const Navbar = () => {
         </Link>
         <div className="nav-menus">
           <div className="nav-links">
-            <div className="nav-dropdown-wrapper">
-              <a href={getHref('expertise')} className="nav-link nav-dropdown-trigger">Expertise</a>
-              <div className="nav-dropdown">
-                <Link to="/expertise/developpement" className="dropdown-item">Développement</Link>
-                <Link to="/expertise/design" className="dropdown-item">Design Architectural</Link>
-                <Link to="/expertise/branding" className="dropdown-item">Branding de Prestige</Link>
-              </div>
-            </div>
+            <a href={getHref('expertise')} className="nav-link">Expertise</a>
             <a href={getHref('vision')} className="nav-link">Vision</a>
             <a href={getHref('portfolio')} className="nav-link" onClick={() => setIsMobileOpen(false)}>Portfolio</a>
             <a href={getHref('contact')} className="nav-link" onClick={() => setIsMobileOpen(false)}>Contact</a>
@@ -125,30 +117,7 @@ const Navbar = () => {
             <div className="mobile-menu-content">
               <Link to="/" className="mobile-menu-link" onClick={() => setIsMobileOpen(false)}>Accueil</Link>
 
-              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
-                <a href={getHref('expertise')} className="mobile-menu-link" style={{ borderBottom: 'none' }} onClick={() => setIsMobileOpen(false)}>Expertise</a>
-                <button
-                  onClick={() => setIsExpertiseOpen(!isExpertiseOpen)}
-                  style={{ background: 'transparent', border: 'none', color: '#fff', padding: '1rem', cursor: 'pointer' }}
-                >
-                  <ChevronDown size={20} style={{ transition: 'transform 0.3s', transform: isExpertiseOpen ? 'rotate(180deg)' : 'rotate(0)' }} />
-                </button>
-              </div>
-
-              <AnimatePresence>
-                {isExpertiseOpen && (
-                  <motion.div
-                    initial={{ height: 0, opacity: 0 }}
-                    animate={{ height: 'auto', opacity: 1 }}
-                    exit={{ height: 0, opacity: 0 }}
-                    style={{ overflow: 'hidden', display: 'flex', flexDirection: 'column', gap: '1rem', marginTop: '-0.5rem', marginBottom: '0.5rem' }}
-                  >
-                    <Link to="/expertise/developpement" className="mobile-menu-sublink" style={{ marginTop: '0.5rem' }} onClick={() => setIsMobileOpen(false)}>— Développement</Link>
-                    <Link to="/expertise/design" className="mobile-menu-sublink" onClick={() => setIsMobileOpen(false)}>— Design Architectural</Link>
-                    <Link to="/expertise/branding" className="mobile-menu-sublink" onClick={() => setIsMobileOpen(false)}>— Branding de Prestige</Link>
-                  </motion.div>
-                )}
-              </AnimatePresence>
+              <a href={getHref('expertise')} className="mobile-menu-link" onClick={() => setIsMobileOpen(false)}>Expertise</a>
 
               <a href={getHref('vision')} className="mobile-menu-link" onClick={() => setIsMobileOpen(false)}>Vision</a>
               <a href={getHref('portfolio')} className="mobile-menu-link" onClick={() => setIsMobileOpen(false)}>Portfolio</a>

@@ -39,9 +39,9 @@ const ExpertiseCard = ({ icon, title, desc, delay, fullWidth = false, link }: { 
         </div>
         <h3 className="card-title">{title}</h3>
         <p className="card-desc">{desc}</p>
-        <Link to={link} style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', marginTop: '2rem', fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.2em', color: 'var(--accent-gold)', textDecoration: 'none' }}>
+        <a href={link} style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', marginTop: '2rem', fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.2em', color: 'var(--accent-gold)', textDecoration: 'none' }}>
           Explorer <ArrowUpRight size={14} />
-        </Link>
+        </a>
       </div>
     </motion.div>
   );
@@ -135,9 +135,9 @@ export const Home = () => {
             </div>
 
             <div className="expertise-grid">
-              <ExpertiseCard delay={0.1} link="/expertise/developpement" icon={<Building2 size={36} />} title="Développement Stratégique" desc="Conception résidentielle et multi-logements alliant rigueur technique, conformité urbaine et vision durable." />
-              <ExpertiseCard delay={0.2} link="/expertise/design" icon={<Paintbrush size={36} />} title="Architecture & Design" desc="Conception résidentielle et multi-logements alliant rigueur technique, conformité urbaine et vision durable." />
-              <ExpertiseCard delay={0.3} link="/expertise/branding" icon={<BarChart3 size={36} />} title="Image & Mise en marché" desc="Branding de projet et outils marketing stratégiques pour maximiser la désirabilité et accélérer la vente." fullWidth />
+              <ExpertiseCard delay={0.1} link="#contact" icon={<Building2 size={36} />} title="Développement Stratégique" desc="Conception résidentielle et multi-logements alliant rigueur technique, conformité urbaine et vision durable." />
+              <ExpertiseCard delay={0.2} link="#contact" icon={<Paintbrush size={36} />} title="Architecture & Design" desc="Conception résidentielle et multi-logements alliant rigueur technique, conformité urbaine et vision durable." />
+              <ExpertiseCard delay={0.3} link="#contact" icon={<BarChart3 size={36} />} title="Image & Mise en marché" desc="Branding de projet et outils marketing stratégiques pour maximiser la désirabilité et accélérer la vente." fullWidth />
             </div>
           </div>
         </div>

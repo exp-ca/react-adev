@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { ArrowRight, Building2, Paintbrush, BarChart3, Mail, Phone, ArrowUpRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import heroImg from '../assets/hero.png.png';
+import heroImg from '../assets/hero.png';
 import photo1 from '../assets/photo_1.jpg';
 import photo2 from '../assets/photo_2.jpg';
 import photo3 from '../assets/photo_3.jpg';
